@@ -1,0 +1,11 @@
+com\escuela\proyectopersistenciaobjetos\entites\Cliente.class
+com\escuela\proyectopersistenciaobjetos\persistencia\ClienteJpaController.class
+com\escuela\proyectopersistenciaobjetos\persistencia\exceptions\IllegalOrphanException.class
+com\escuela\proyectopersistenciaobjetos\persistencia\exceptions\PreexistingEntityException.class
+com\escuela\proyectopersistenciaobjetos\model\Instrumentos.class
+com\escuela\proyectopersistenciaobjetos\persistencia\TbInstrumentosJpaController.class
+com\escuela\proyectopersistenciaobjetos\entites\TbInstrumentos.class
+com\escuela\proyectopersistenciaobjetos\entites\Venta.class
+com\escuela\proyectopersistenciaobjetos\Main.class
+com\escuela\proyectopersistenciaobjetos\persistencia\exceptions\NonexistentEntityException.class
+com\escuela\proyectopersistenciaobjetos\persistencia\ventaJpaController.class
