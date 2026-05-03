@@ -6,7 +6,8 @@ import java.util.List;
 
 @Entity
 @Table(name="cliente")
-public class Cliente implements Serializable {
+public class
+Cliente implements Serializable {
     
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
