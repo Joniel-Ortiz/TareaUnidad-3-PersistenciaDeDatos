@@ -26,9 +26,9 @@ Cliente implements Serializable {
     @Column(name="tlf_cliente")
     private String tlf_cliente;
     
-    @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "cliente", fetch = FetchType.LAZY)
     private List<Venta> ventas;
-    
+
     public Cliente() {
     }
 
@@ -56,4 +56,16 @@ Cliente implements Serializable {
 
     public List<Venta> getVentas() { return ventas; }
     public void setVentas(List<Venta> ventas) { this.ventas = ventas; }
+
+    @Override
+    public String toString() {
+        return "Cliente{" +
+                "id_cliente=" + id_cliente +
+                ", ced_cliente='" + ced_cliente + '\'' +
+                ", nombre_cliente='" + nombre_cliente + '\'' +
+                ", email_cliente='" + email_cliente + '\'' +
+                ", tlf_cliente='" + tlf_cliente + '\'' +
+                ", num_ventas='" + ventas.size() + '\'' +
+                '}';
+    }
 }

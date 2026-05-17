@@ -24,7 +24,10 @@ public class Venta implements Serializable {
     @ManyToOne
     @JoinColumn(name="id_instrumento", referencedColumnName = "id_pr")
     private TbInstrumentos instrumento;
-    
+
+    @Column(name="descripcion")
+    private String descripcion;
+
     @Column(name="cantidad_pr")
     private int cantidad_pr;
     
@@ -37,8 +40,9 @@ public class Venta implements Serializable {
     public Venta() {
     }
 
-    public Venta(LocalDateTime fecha_venta, Cliente cliente, TbInstrumentos instrumento, int cantidad_pr, int total_venta, String metodo_pago) {
+    public Venta(LocalDateTime fecha_venta,String descripcion, Cliente cliente, TbInstrumentos instrumento, int cantidad_pr, int total_venta, String metodo_pago) {
         this.fecha_venta = fecha_venta;
+        this.descripcion = descripcion;
         this.cliente = cliente;
         this.instrumento = instrumento;
         this.cantidad_pr = cantidad_pr;
@@ -66,4 +70,28 @@ public class Venta implements Serializable {
 
     public String getMetodo_pago() { return metodo_pago; }
     public void setMetodo_pago(String metodo_pago) { this.metodo_pago = metodo_pago; }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    @Override
+    public String toString() {
+        return "Venta{" +
+                "id_venta=" + id_venta + ", " +
+                "fecha_venta=" + fecha_venta + ", " +
+                "cliente=" + cliente.getId_cliente() + ", " +
+                "instrumento=" + instrumento.getNombrePr() + ", " +
+                "id_instrumento=" + instrumento.getIdPr() + ", " +
+                "cantidad_pr=" + cantidad_pr + ", " +
+                "total_venta=" + total_venta + ", " +
+                "metodo_pago=" + metodo_pago +
+                "}";
+    }
+    
+    
 }
